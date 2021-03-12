@@ -12,8 +12,7 @@ class App extends Component {
     return (
       <div className="App container-fluid">
         <Navigation />
-        <h1 className="text-center">Hello StackBlitz!</h1>
-        <p>Start editing to see some magic happen :)</p>
+        <Tarjeta />
       </div>
     );
   }

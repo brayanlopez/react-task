@@ -11,9 +11,17 @@ class Tarjeta extends Component {
   }
   render() {
     const todos = this.state.todos.map((todo, i) => {
-      return {
-        //<p>{todo.title}</p>
-      };
+      return (
+        <div className="card">
+          <div className="card-header">
+            <h3>{todo.title}</h3>
+          </div>
+          <div className="card-body">
+            <p>{todo.description}</p>
+            <p>{todo.responsible}</p>
+          </div>
+        </div>
+      );
     });
     return todos;
   }
