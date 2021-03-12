@@ -2,23 +2,11 @@ import React, { Component } from "react";
 import Navigation from "./components/Navigation";
 import "./style.css";
 
-import { todos } from "./datos/todos.json";
+import Tarjeta from "./Tarjeta";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      todos
-    };
-  }
-  //let nav = new Navigation();
-  tarjetas() {
-    const todos = this.state.todos.map((todo, i) => {
-      return {
-        //<p>{todo.title}</p>
-      };
-    });
-    return todos;
   }
   render() {
     return (
