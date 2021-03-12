@@ -12,7 +12,10 @@ class Navigation extends Component {
     return (
       <nav className="navbar navbar-dark bg-dark">
         <a href="" className="text-white">
-          {this.state.title} - {this.state.ntareas}
+          {this.state.title} -
+          <span className="badge badge-fill badge-info">
+            {this.state.ntareas}
+          </span>
         </a>
       </nav>
     );
