@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 
-import { todos } from "./datos/todos.json";
-
 class Tarjeta extends Component {
   constructor() {
     super();
-    this.state = {
-      todos
-    };
   }
   render() {
-    const todos = this.state.todos.map((todo, i) => {
+    const todos = this.props.tasks.todos.map((todo, i) => {
       return (
         <div className="col-md-4">
           <div className="card mt-4">
