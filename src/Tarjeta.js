@@ -4,10 +4,11 @@ class Tarjeta extends Component {
   constructor() {
     super();
   }
+
   render() {
-    const todos = this.props.tasks.todos.map((todo, i) => {
+    const todos = this.props.tasks.map((todo, i) => {
       return (
-        <div className="col-md-4">
+        <div className="col-md-4" key={i}>
           <div className="card mt-4">
             <div className="card-header">
               <h3>{todo.title}</h3>
@@ -20,7 +21,12 @@ class Tarjeta extends Component {
               <p>{todo.responsible}</p>
             </div>
             <div className="card-footer">
-              <button className="btn btn-danger">Delete</button>
+              <button
+                className="btn btn-danger"
+                onClick={this.props.remove.bind(this)}
+              >
+                Delete
+              </button>
             </div>
           </div>
         </div>

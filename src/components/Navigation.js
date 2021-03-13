@@ -14,7 +14,7 @@ class Navigation extends Component {
         <a href="" className="text-white">
           {this.state.title} -
           <span className="badge badge-fill badge-info">
-            {this.state.ntareas}
+            {this.props.ntareas}
           </span>
         </a>
       </nav>

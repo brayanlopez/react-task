@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+//Componentes
 import Navigation from "./components/Navigation";
 import TodoForm from "./components/TodoForm";
-import "./style.css";
-
 import Tarjeta from "./Tarjeta";
-
-import todos from "./datos/todos";
+//estilos
+import "./style.css";
+//datos
+import { todos } from "./datos/todos";
 
 class App extends Component {
   constructor() {
@@ -14,14 +15,7 @@ class App extends Component {
       todos
     };
     this.handleAddTodo = this.handleAddTodo.bind(this);
-  }
-
-  removeTodo(index) {
-    this.setState({
-      todos: this.state.todos.filter((e, i) => {
-        return i !== index;
-      })
-    });
+    this.removeTodo = this.removeTodo.bind(this);
   }
 
   handleAddTodo(todo) {
@@ -30,14 +24,23 @@ class App extends Component {
     });
   }
 
+  removeTodo(index) {
+    console.log(index);
+    this.setState({
+      todos: this.state.todos.filter((e, i) => {
+        return i !== index;
+      })
+    });
+  }
+
   render() {
     return (
       <div className="App container-fluid">
-        <Navigation />
+        <Navigation ntareas={this.state.todos.length} />
         <div className="container">
           <div className="row mt-4">
             <TodoForm onAddTodo={this.handleAddTodo} />
-            <Tarjeta tasks={todos} />
+            <Tarjeta tasks={this.state.todos} remove={this.removeTodo} />
           </div>
         </div>
       </div>
