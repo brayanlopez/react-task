@@ -1,3 +1,5 @@
-# react-vocxm7
+# react-task
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-vocxm7)
+## Developed With
+- React
+- Bootstrap
